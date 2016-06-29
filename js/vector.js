@@ -9,6 +9,9 @@ var vector = (function() {
     this.y = y;
   }
 
+  Vector.prototype.escalar = function(other){
+  return this.x * other.x + this.y * other.y;
+  };
 
   Vector.prototype.plus = function(other) {
     return new Vector(this.x + other.x, this.y + other.y);
@@ -17,6 +20,11 @@ var vector = (function() {
   Vector.prototype.minus = function(other) {
     return new Vector(this.x - other.x, this.y - other.y);
   };
+
+  Vector.prototype.toString = function(){
+    return "v(" + this.x +", "+ this.y+")";
+  }
+
 
   Object.defineProperty(Vector.prototype, "length", {
     get: function() {
